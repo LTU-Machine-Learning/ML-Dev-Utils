@@ -1,0 +1,15 @@
+{{- if eq .Values.location "icekube" }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ .Release.Name }}-volume-claim-icekube
+  annotations:
+    "helm.sh/resource-policy": keep
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: rook-ceph-fs
+  resources:
+    requests:
+      storage: 5Gi
+{{- end }}

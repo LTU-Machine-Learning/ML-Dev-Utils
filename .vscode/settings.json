@@ -1,0 +1,31 @@
+{
+    "editor.rulers": [
+        79
+    ],
+    "editor.formatOnSave": true,
+    "[helm]": {
+        "editor.formatOnSave": false
+    },
+    "editor.minimap.enabled": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/.pytest_cache": true,
+        "**/__pycache__": true,
+        "**/.ipynb_checkpoints": true
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/lightning_logs/**": true,
+        "**/data/**": true
+    },
+    "python.defaultInterpreterPath": "/usr/bin/python",
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.formatting.provider": "autopep8",
+    "python.languageServer": "Pylance"
+}

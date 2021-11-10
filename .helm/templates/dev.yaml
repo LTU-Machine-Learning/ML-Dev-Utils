@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Release.Name }}-dev
+  labels:
+    app: {{ .Release.Name }}-dev
+spec:
+  containers:
+    - name: {{ .Release.Name }}-dev
+      image: {{ .Values.imageDev }}
+      imagePullPolicy: {{ .Values.imageDevPullPolicy }}
+      {{- if eq .Values.location "icekube" }}
+      resources:
+        requests:
+          cpu: {{ .Values.cpu | quote }}
+          memory: {{ .Values.memory }}
+          nvidia.com/gpu: {{ .Values.gpu | quote }}
+        limits:
+          cpu: {{ .Values.cpu | quote }}
+          memory: {{ .Values.memory }}
+          nvidia.com/gpu: {{ .Values.gpu | quote }}
+      {{- end }}
+      {{- if eq .Values.location "local" }}
+      volumeMounts:
+        - name: {{ .Release.Name }}-volume-repository
+          mountPath: /home/vscode/workspace
+        - name: {{ .Release.Name }}-volume-vscode-server
+          mountPath: /home/vscode/.vscode-server
+      {{- end }}
+      {{- if eq .Values.location "icekube" }}
+      volumeMounts:
+        - name: {{ .Release.Name }}-volume
+          mountPath: /home/vscode/workspace
+          subPath: repository
+        - name: {{ .Release.Name }}-volume
+          mountPath: /home/vscode/.vscode-server
+          subPath: vscode-server
+      {{- end }}
+  volumes:
+    {{- if eq .Values.location "local" }}
+    - name: {{ .Release.Name }}-volume-repository
+      hostPath:
+        path: {{ .Values.localVolumePath }}/repository
+        type: Directory
+    - name: {{ .Release.Name }}-volume-vscode-server
+      hostPath:
+        path: {{ .Values.localVolumePath }}/vscode-server
+        type: Directory
+    {{- end }}
+    {{- if eq .Values.location "icekube" }}
+    - name: {{ .Release.Name }}-volume
+      persistentVolumeClaim:
+        claimName: {{ .Release.Name }}-volume-claim-{{ .Values.location }}
+    {{- end }}

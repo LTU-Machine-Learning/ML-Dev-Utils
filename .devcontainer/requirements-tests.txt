@@ -1,0 +1,7 @@
+pytest
+build
+twine
+setuptools
+wheel
+sphinx
+karma-sphinx-theme
