@@ -1,0 +1,16 @@
+# OSX
+.DS_Store
+
+# Project
+*.log
+data/
+/tmp/
+
+# Python
+__pycache__
+.ipynb_checkpoints/
+lightning_logs/
+/build
+/dist
+*egg-info/
+_build/

@@ -1,0 +1,7 @@
+#
+# Values for deployment on localhost
+#
+location: local
+
+imageDev: ltuml/ml-dev:ml-dev-utils
+imageDevPullPolicy: IfNotPresent # Always | IfNotPresent

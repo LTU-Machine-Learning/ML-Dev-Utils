@@ -1,0 +1,20 @@
+Thank you for installing {{ .Chart.Name }}.
+
+Your release is named {{ .Release.Name }}.
+
+To learn more about the release, try:
+
+  $ helm status {{ .Release.Name }}
+  $ helm get all {{ .Release.Name }}
+
+Volumes:
+--------
+The following volumes are mount:
+
+
+Development Pod
+---------------
+The development Pod is called '...'. You can attach Visual Studio Code to the Pod 
+by the Kubernetes VSC extension.
+
+TODO More nice informations here!
