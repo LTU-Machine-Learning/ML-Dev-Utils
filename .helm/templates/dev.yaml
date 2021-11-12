@@ -40,7 +40,7 @@ spec:
     {{- if eq .Values.location "local" }}
     - name: {{ .Release.Name }}-volume-repository
       hostPath:
-        path: {{ .Values.localVolumePath }}/repository
+        path: {{ required "env ML_DEV_UTILS_VOLUME_PATH is required!" .Values.localVolumePath }}/repository
         type: Directory
     - name: {{ .Release.Name }}-volume-vscode-server
       hostPath:
