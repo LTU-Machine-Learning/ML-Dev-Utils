@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>log_handler &mdash; ML-Dev Utils 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.min.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Change Log" href="../changelog.html" />
+    <link rel="prev" title="Timer" href="ml_dev_utils.Timer.html" /> 
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a class="site-nav-toggle hidden-lg-up"><i class="icon-menu"></i></a>
+            <a class="site-title" href="../index.html">
+                ML-Dev Utils
+            </a>
+        </div>
+    </header>
+
+
+<div class="breadcrumbs-outer hidden-xs-down">
+    <div class="container">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a></li>
+        
+          <li><a href="../api.html">API Documentation</a></li>
+        
+      <li>log_handler</li>
+    
+    
+      <li class="breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/ml_dev_utils.log_handler.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+    </div>
+</div>
+    <div class="main-outer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-3 site-nav">
+                    
+<div role="search">
+    <form class="search" action="../search.html" method="get">
+        <div class="icon-input">
+            <input type="text" name="q" placeholder="Search" />
+            <span class="icon-search"></span>
+        </div>
+        <input type="submit" value="Go" class="d-hidden" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+                    <div class="site-nav-tree">
+                        
+                            
+                            
+                                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ml_dev_utils.Timer.html">Timer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">log_handler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+</ul>
+
+                            
+                        
+                    </div>
+                </div>
+                <div class="col-12 col-lg-9">
+                    <div class="document">
+                        
+                            
+  <span class="target" id="module-ml_dev_utils.log_handler"></span><section id="log-handler">
+<h1>log_handler<a class="headerlink" href="#log-handler" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">log_handler</span></code> provides logging handlers for convenience to easily get a
+console or log file output. Additionally, a timezone format for log timestamps
+is provided.</p>
+<p><strong>Attributes</strong></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ml_dev_utils.log_handler.console">
+<span class="sig-name descname"><span class="pre">console</span></span><a class="headerlink" href="#ml_dev_utils.log_handler.console" title="Permalink to this definition">¶</a></dt>
+<dd><p>A console handler for logging using the TimezoneLogFormatter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>StreamHandler</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ml_dev_utils</span> <span class="kn">import</span> <span class="n">log</span>
+<span class="kn">from</span> <span class="nn">ml_dev_utils</span> <span class="kn">import</span> <span class="n">log_handler</span>
+
+<span class="n">log</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">log_handler</span><span class="o">.</span><span class="n">console</span><span class="p">)</span>
+
+<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Pizza Time!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="ml_dev_utils.log_handler.TimezoneLogFormatter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TimezoneLogFormatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timezone</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'UTC'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ml_dev_utils/log_handler.html#TimezoneLogFormatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_dev_utils.log_handler.TimezoneLogFormatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Formatter</span></code></p>
+<p>%(asctime)s with timezone.</p>
+<p>This formatter overrides logging.Formatter to add the timezone to the
+%(asctime)s in the log output. The format is ISO8601, e.g.
+2009-06-30T18:30:00+02:00</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>timezone</strong> (<em>str</em><em>, </em><em>optional</em>) – Set’s the timezone. Defaults to “UTC”.</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">ml_dev_utils.log_handler</span> <span class="kn">import</span> <span class="n">TimezoneLogFormatter</span>
+
+<span class="n">timezone_formatter</span> <span class="o">=</span> <span class="n">TimezoneLogFormatter</span><span class="p">(</span><span class="n">timezone</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="p">)</span>
+
+<span class="n">now_timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timezone_formatter</span><span class="o">.</span><span class="n">converter</span><span class="p">(</span><span class="n">now_timestamp</span><span class="p">))</span>
+<span class="c1"># 2021-11-12 06:51:24.984044+00:00</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ml_dev_utils.log_handler.TimezoneLogFormatter.converter">
+<span class="sig-name descname"><span class="pre">converter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime.datetime</span></span></span><a class="reference internal" href="../_modules/ml_dev_utils/log_handler.html#TimezoneLogFormatter.converter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_dev_utils.log_handler.TimezoneLogFormatter.converter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a timestamp into the timezone format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>timestamp</strong> (<em>float</em>) – The timestamp to convert.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The timestamp with timezone.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ml_dev_utils.log_handler.TimezoneLogFormatter.formatTime">
+<span class="sig-name descname"><span class="pre">formatTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datefmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ml_dev_utils/log_handler.html#TimezoneLogFormatter.formatTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_dev_utils.log_handler.TimezoneLogFormatter.formatTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the creation time of the specified LogRecord as formatted text.</p>
+<p>This method should be called from format() by a formatter which
+wants to make use of a formatted time. This method can be overridden
+in formatters to provide for any specific requirement, but the
+basic behaviour is as follows: if datefmt (a string) is specified,
+it is used with time.strftime() to format the creation time of the
+record. Otherwise, an ISO8601-like (or RFC 3339-like) format is used.
+The resulting string is returned. This function uses a user-configurable
+function to convert the creation time to a tuple. By default,
+time.localtime() is used; to change this for a particular formatter
+instance, set the ‘converter’ attribute to a function with the same
+signature as time.localtime() or time.gmtime(). To change it for all
+formatters, for example if you want all logging times to be shown in GMT,
+set the ‘converter’ attribute in the Formatter class.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ml_dev_utils.log_handler.rotating_file">
+<span class="sig-name descname"><span class="pre">rotating_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_level</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">logging.handlers.RotatingFileHandler</span></span></span><a class="reference internal" href="../_modules/ml_dev_utils/log_handler.html#rotating_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_dev_utils.log_handler.rotating_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>A RotatingFileHandler for logging.</p>
+<p>This handler uses the TimezoneLogFormatter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>log_file</strong> (<em>str</em>) – The log filename.</p></li>
+<li><p><strong>log_level</strong> (<em>int</em><em>, </em><em>optional</em>) – The log level for the handler. Defaults to logging.DEBUG.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A RotatingFileHandler log handler.</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ml_dev_utils</span> <span class="kn">import</span> <span class="n">log</span>
+<span class="kn">from</span> <span class="nn">ml_dev_utils</span> <span class="kn">import</span> <span class="n">log_handler</span>
+
+<span class="n">log</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">log_handler</span><span class="o">.</span><span class="n">rotating_file</span><span class="p">(</span><span class="s1">&#39;tmp/app.log&#39;</span><span class="p">))</span>
+
+<span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Pizza Time!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+    <div class="footer" role="contentinfo">
+        <div class="container">
+            &#169; Copyright 2021, ML-Group.
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.
+        </div>
+    </div>  
+
+</body>
+</html>

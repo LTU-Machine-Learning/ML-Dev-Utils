@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Timer &mdash; ML-Dev Utils 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.min.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="log_handler" href="ml_dev_utils.log_handler.html" />
+    <link rel="prev" title="API Documentation" href="../api.html" /> 
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a class="site-nav-toggle hidden-lg-up"><i class="icon-menu"></i></a>
+            <a class="site-title" href="../index.html">
+                ML-Dev Utils
+            </a>
+        </div>
+    </header>
+
+
+<div class="breadcrumbs-outer hidden-xs-down">
+    <div class="container">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a></li>
+        
+          <li><a href="../api.html">API Documentation</a></li>
+        
+      <li>Timer</li>
+    
+    
+      <li class="breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/ml_dev_utils.Timer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+    </div>
+</div>
+    <div class="main-outer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-3 site-nav">
+                    
+<div role="search">
+    <form class="search" action="../search.html" method="get">
+        <div class="icon-input">
+            <input type="text" name="q" placeholder="Search" />
+            <span class="icon-search"></span>
+        </div>
+        <input type="submit" value="Go" class="d-hidden" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+                    <div class="site-nav-tree">
+                        
+                            
+                            
+                                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Timer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ml_dev_utils.log_handler.html">log_handler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+</ul>
+
+                            
+                        
+                    </div>
+                </div>
+                <div class="col-12 col-lg-9">
+                    <div class="document">
+                        
+                            
+  <span class="target" id="module-ml_dev_utils.Timer"></span><section id="timer">
+<h1>Timer<a class="headerlink" href="#timer" title="Permalink to this headline">¶</a></h1>
+<p>This module measures the execution time and provides three ways to do this:</p>
+<ul class="simple">
+<li><p><strong>MeasureTime</strong>: Measure time as decorator <code class="docutils literal notranslate"><span class="pre">&#64;MeasureTime</span></code>.</p></li>
+<li><p><strong>MeasureBlockTime</strong>: Measure as <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">MeasureBlockTime(&quot;my_block&quot;)</span> <span class="pre">as</span> <span class="pre">my_block:</span></code>.</p></li>
+<li><p><strong>Timer</strong>: Measure as instance <code class="docutils literal notranslate"><span class="pre">timer</span> <span class="pre">=</span> <span class="pre">Timer()</span></code></p></li>
+</ul>
+<dl class="py class">
+<dt class="sig sig-object py" id="ml_dev_utils.Timer.MeasureBlockTime">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MeasureBlockTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'(block)'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ml_dev_utils/Timer.html#MeasureBlockTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_dev_utils.Timer.MeasureBlockTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Measure the execution time of a code block.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – A name for the timer instance. Defaults to “(block)”.</p></li>
+<li><p><strong>log_time</strong> – If true, it will write the execution time to <code class="docutils literal notranslate"><span class="pre">log.debug</span></code>. Defaults to True.</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Attributes</strong></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ml_dev_utils.Timer.MeasureBlockTime.timer">
+<span class="sig-name descname"><span class="pre">timer</span></span><a class="headerlink" href="#ml_dev_utils.Timer.MeasureBlockTime.timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Keeps the measured time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#ml_dev_utils.Timer.Timer" title="ml_dev_utils.Timer.Timer">ml_dev_utils.Timer.Timer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ml_dev_utils.Timer</span> <span class="kn">import</span> <span class="n">MeasureBlockTime</span>
+
+<span class="k">with</span> <span class="n">MeasureBlockTime</span><span class="p">(</span><span class="s2">&quot;my_block&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">my_block</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my code here&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_block</span><span class="o">.</span><span class="n">timer</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ml_dev_utils.Timer.MeasureTime">
+<span class="sig-name descname"><span class="pre">MeasureTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ml_dev_utils/Timer.html#MeasureTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_dev_utils.Timer.MeasureTime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Measure the execution time as a decorator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The return of the wrapped function</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ml_dev_utils.Timer</span> <span class="kn">import</span> <span class="n">MeasureTime</span>
+
+<span class="nd">@MeasureTime</span>
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my awesome code&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The measured duration time will be written to <code class="docutils literal notranslate"><span class="pre">log.debug</span></code>. Therefore to
+see the output, you need to set up a handler for logging.</p>
+<p>Example with specific <code class="docutils literal notranslate"><span class="pre">ml_dev_utils</span></code> logger:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">ml_dev_utils</span> <span class="kn">import</span> <span class="n">log</span>
+<span class="kn">from</span> <span class="nn">ml_dev_utils.log_handler</span> <span class="kn">import</span> <span class="n">console</span>
+<span class="kn">from</span> <span class="nn">ml_dev_utils.Timer</span> <span class="kn">import</span> <span class="n">MeasureTime</span>
+
+<span class="n">log</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">console</span><span class="p">)</span>
+<span class="n">log</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="nd">@MeasureTime</span>
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;my awesome code&quot;</span><span class="p">)</span>
+
+<span class="n">my_function</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ml_dev_utils.Timer.Timer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'unnamed'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ml_dev_utils/Timer.html#Timer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_dev_utils.Timer.Timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Measures the execution time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – A name for the timer instance. Defaults to “unnamed”.</p>
+</dd>
+</dl>
+<p><strong>Attributes</strong></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ml_dev_utils.Timer.Timer.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#ml_dev_utils.Timer.Timer.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>The name of the Timer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ml_dev_utils.Timer.Timer.time">
+<span class="sig-name descname"><span class="pre">time</span></span><a class="headerlink" href="#ml_dev_utils.Timer.Timer.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The measured duration time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>datetime.timedelta</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ml_dev_utils.Timer.Timer.start_time">
+<span class="sig-name descname"><span class="pre">start_time</span></span><a class="headerlink" href="#ml_dev_utils.Timer.Timer.start_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>The start time of the measurement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ml_dev_utils.Timer</span> <span class="kn">import</span> <span class="n">Timer</span>
+
+<span class="n">timer</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">()</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timer</span><span class="o">.</span><span class="n">end</span><span class="p">())</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ml_dev_utils.Timer.Timer.end">
+<span class="sig-name descname"><span class="pre">end</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime.timedelta</span></span></span><a class="reference internal" href="../_modules/ml_dev_utils/Timer.html#Timer.end"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_dev_utils.Timer.Timer.end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the measurement.</p>
+<p>Measures the time duration and set’s it to the <code class="docutils literal notranslate"><span class="pre">time</span></code> instance variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The measured time duration</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ml_dev_utils.Timer.Timer.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#ml_dev_utils.Timer.Timer" title="ml_dev_utils.Timer.Timer"><span class="pre">ml_dev_utils.Timer.Timer</span></a></span></span><a class="reference internal" href="../_modules/ml_dev_utils/Timer.html#Timer.start"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_dev_utils.Timer.Timer.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts the measurement.</p>
+<p>Set’s the start time in the <code class="docutils literal notranslate"><span class="pre">start_time</span></code> instance variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Returns itself for fluent initialization.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+    <div class="footer" role="contentinfo">
+        <div class="container">
+            &#169; Copyright 2021, ML-Group.
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.
+        </div>
+    </div>  
+
+</body>
+</html>
