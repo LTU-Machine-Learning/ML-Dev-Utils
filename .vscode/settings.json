@@ -12,7 +12,8 @@
         "**/.DS_Store": true,
         "**/.pytest_cache": true,
         "**/__pycache__": true,
-        "**/.ipynb_checkpoints": true
+        "**/.ipynb_checkpoints": true,
+        "**/ml_dev_utils.egg-info": true
     },
     "files.watcherExclude": {
         "**/.git/objects/**": true,

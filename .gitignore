@@ -10,8 +10,7 @@ data/
 __pycache__
 .ipynb_checkpoints/
 lightning_logs/
-
-# Misc
-
-# jupyter
+/build
+/dist
+*egg-info/
 _build/
