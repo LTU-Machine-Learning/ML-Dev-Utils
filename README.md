@@ -1,5 +1,7 @@
 # ML-Dev-Utils
 
+You can find the documentation [here](https://ltu-machine-learning.github.io/ML-Dev-Utils/).
+
 ## Development
 
 ### Build and publish
@@ -46,6 +48,6 @@ twine upload dist/*
 ### Create documenation
 
 ```bash
-sphinx-apidoc -fMeET -o /home/vscode/workspace/docs/api/ /home/vscode/workspace/src/ml_dev_utils/
-sphinx-build -a -b html /home/vscode/workspace/docs/ /home/vscode/workspace/docs/build/html
+sphinx-apidoc -fMeET -o /home/vscode/workspace/docs_src/api/ /home/vscode/workspace/src/ml_dev_utils/
+sphinx-build -a -b html /home/vscode/workspace/docs_src/ /home/vscode/workspace/docs/
 ```
