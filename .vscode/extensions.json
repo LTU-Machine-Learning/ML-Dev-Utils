@@ -6,7 +6,8 @@
         "ms-vsliveshare.vsliveshare",
         "mutantdino.resourcemonitor",
         "redhat.vscode-yaml",
-        "cameron.rerun-last-command"
+        "cameron.rerun-last-command",
+        "njpwerner.autodocstring"
     ],
     "unwantedRecommendations": []
 }
