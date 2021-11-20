@@ -31,7 +31,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="log_handler" href="ml_dev_utils.log_handler.html" />
-    <link rel="prev" title="API Documentation" href="../api.html" /> 
+    <link rel="prev" title="TelegramNotifier" href="ml_dev_utils.TelegramNotifier.html" /> 
 
 </head>
 
@@ -109,6 +109,7 @@
                             
                                 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ml_dev_utils.TelegramNotifier.html">TelegramNotifier</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Timer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ml_dev_utils.log_handler.html">log_handler</a></li>
 </ul>
@@ -135,7 +136,8 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="ml_dev_utils.Timer.MeasureBlockTime">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MeasureBlockTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'(block)'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ml_dev_utils/Timer.html#MeasureBlockTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_dev_utils.Timer.MeasureBlockTime" title="Permalink to this definition">¶</a></dt>
-<dd><p>Measure the execution time of a code block.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Measure the execution time of a code block.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -207,7 +209,8 @@ see the output, you need to set up a handler for logging.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ml_dev_utils.Timer.Timer">
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'unnamed'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/ml_dev_utils/Timer.html#Timer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_dev_utils.Timer.Timer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Measures the execution time.</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Measures the execution time.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>name</strong> – A name for the timer instance. Defaults to “unnamed”.</p>

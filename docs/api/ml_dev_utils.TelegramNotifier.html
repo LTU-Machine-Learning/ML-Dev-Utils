@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TelegramNotifier &mdash; ML-Dev Utils 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.min.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Timer" href="ml_dev_utils.Timer.html" />
+    <link rel="prev" title="API Documentation" href="../api.html" /> 
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a class="site-nav-toggle hidden-lg-up"><i class="icon-menu"></i></a>
+            <a class="site-title" href="../index.html">
+                ML-Dev Utils
+            </a>
+        </div>
+    </header>
+
+
+<div class="breadcrumbs-outer hidden-xs-down">
+    <div class="container">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a></li>
+        
+          <li><a href="../api.html">API Documentation</a></li>
+        
+      <li>TelegramNotifier</li>
+    
+    
+      <li class="breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/ml_dev_utils.TelegramNotifier.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+</div>
+    </div>
+</div>
+    <div class="main-outer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-3 site-nav">
+                    
+<div role="search">
+    <form class="search" action="../search.html" method="get">
+        <div class="icon-input">
+            <input type="text" name="q" placeholder="Search" />
+            <span class="icon-search"></span>
+        </div>
+        <input type="submit" value="Go" class="d-hidden" />
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+                    <div class="site-nav-tree">
+                        
+                            
+                            
+                                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">TelegramNotifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ml_dev_utils.Timer.html">Timer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ml_dev_utils.log_handler.html">log_handler</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+</ul>
+
+                            
+                        
+                    </div>
+                </div>
+                <div class="col-12 col-lg-9">
+                    <div class="document">
+                        
+                            
+  <span class="target" id="module-ml_dev_utils.TelegramNotifier"></span><section id="telegramnotifier">
+<h1>TelegramNotifier<a class="headerlink" href="#telegramnotifier" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ml_dev_utils.TelegramNotifier.TelegramNotifier">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">TelegramNotifier</span></span><a class="reference internal" href="../_modules/ml_dev_utils/TelegramNotifier.html#TelegramNotifier"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_dev_utils.TelegramNotifier.TelegramNotifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Send message to Telegram</p>
+<p>This class sends messages to Telegram. To access Telegram, you need to set
+the environment variables <cite>TELEGRAM_BOT_TOKEN</cite> and <cite>TELEGRAM_CHAT_ID.</cite> The
+documentation on setting up a Telegram bot can be found here:
+<a class="reference external" href="https://core.telegram.org/bots">https://core.telegram.org/bots</a>.</p>
+<p>Example to set ENV on Mac/Linux:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">TELEGRAM_BOT_TOKEN</span><span class="o">=</span><span class="n">your</span><span class="o">-</span><span class="n">token</span><span class="o">-</span><span class="n">here</span>
+<span class="n">export</span> <span class="n">TELEGRAM_CHAT_ID</span><span class="o">=</span><span class="n">your</span><span class="o">-</span><span class="n">chat</span><span class="o">-</span><span class="nb">id</span><span class="o">-</span><span class="n">here</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ml_dev_utils.TelegramNotifier.TelegramNotifier.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/ml_dev_utils/TelegramNotifier.html#TelegramNotifier.send"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ml_dev_utils.TelegramNotifier.TelegramNotifier.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a message</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>str</em>) – The text of the message</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>JSON response from Telegram</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ml_dev_utils.TelegramNotifier</span> <span class="kn">import</span> <span class="n">TelegramNotifier</span>
+
+<span class="n">telegram_notifier</span> <span class="o">=</span> <span class="n">TelegramNotifier</span><span class="p">()</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">telegram_notifier</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&quot;Training finished with 99,9</span><span class="si">% a</span><span class="s2">ccuracy!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+    <div class="footer" role="contentinfo">
+        <div class="container">
+            &#169; Copyright 2021, ML-Group.
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.
+        </div>
+    </div>  
+
+</body>
+</html>

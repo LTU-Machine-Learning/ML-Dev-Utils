@@ -12,5 +12,6 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
+   ml_dev_utils.TelegramNotifier
    ml_dev_utils.Timer
    ml_dev_utils.log_handler

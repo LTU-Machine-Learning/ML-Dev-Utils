@@ -17,7 +17,7 @@ def test_message_is_send_to_chat_bot():
     telegram_notifier = TelegramNotifier()
 
     # when
-    response = telegram_notifier.send("Training finished with 99,9 accuracy!")
+    response = telegram_notifier.send("Training finished with 99,9% accuracy!")
 
     # then
     print(response)
@@ -35,7 +35,7 @@ def test_missing_env_variables():
     telegram_notifier = TelegramNotifier()
 
     # when
-    response = telegram_notifier.send("Training finished with 99,9 accuracy!")
+    response = telegram_notifier.send("Training finished with 99,9% accuracy!")
 
     # then
     assert response['ok'] == False
