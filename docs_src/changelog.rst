@@ -2,6 +2,15 @@ Change Log
 ==========
 
 **********************
+Version 0.0.2
+**********************
+
+November 24, 2021
+
+* Add TelegramNotifer to send messages to Telegram
+
+
+**********************
 Version 0.0.1
 **********************
 

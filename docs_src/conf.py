@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath('../src/ml_dev_utils'))
 project = 'ML-Dev Utils'
 copyright = '2021, ML-Group'
 author = 'ML-Group'
-version = release = "0.0.1"
+version = release = "0.0.2"
 
 
 # -- General configuration ---------------------------------------------------
