@@ -24,9 +24,3 @@ class TelegramNotifier:
         response = requests.get(send_message_url)
 
         return response.json()
-
-
-if __name__ == "__main__":
-    telegram_notifier = TelegramNotifier()
-    response = telegram_notifier.send("Training finished with 99,9 accuracy!")
-    print(response)
